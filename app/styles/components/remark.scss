@@ -1,0 +1,28 @@
+@import '../share/_variables';
+
+.remark {
+	display: flex;
+	padding: 20px;
+	background: $white;
+	border-radius: 4px;
+}
+
+.remark-avatar {
+	margin-right: 20px;
+}
+
+.remark-body {
+	flex: 1 1 0;
+}
+
+.remark-nav {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	margin-top: 10px;
+}
+
+.remark-char-count {
+	margin-right: 10px;
+	color: $text-color-pale;
+}

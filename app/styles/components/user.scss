@@ -1,0 +1,21 @@
+@import '../share/_variables';
+
+.user {
+	display: flex;
+	align-items: center;
+	padding: 20px;
+}
+
+.user-image {
+	margin-right: 20px;
+}
+
+.user-name {
+	margin-bottom: 5px;
+	color: $color-primary;
+	font-size: 15px;
+}
+
+.user-nickname {
+	margin-bottom: 10px;
+}

@@ -1,0 +1,36 @@
+.login {
+	width: 420px;
+	margin: 0 auto;
+	padding: 60px 0;
+}
+
+.login-signin {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 40px;
+}
+
+.login-signup {
+	background: $white;
+}
+
+.login-signup-form {
+	display: flex;
+	flex-direction: column;
+	padding: 28px;
+}
+
+.login-signup-register {
+	padding: 16px 20px;
+	background: $color-primary;
+	color: $text-color-invert;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.login-logo {
+	font-size: 48px;
+	font-weight: bold;
+	text-align: center;
+}

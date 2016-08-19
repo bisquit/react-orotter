@@ -1,0 +1,42 @@
+@import '../share/_variables';
+
+.tweet {
+	display: flex;
+	padding: 20px;
+}
+
+.tweet-user-photo {
+	margin-right: 20px;
+}
+
+.tweet-body {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 0;
+}
+
+.tweet-user-info {
+	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
+}
+
+.tweet-user-name {
+	margin-right: 10px;
+	color: $color-primary;
+	font-size: 20px;
+}
+
+.tweet-user-username {
+	color: $text-color-gray;
+	font-size: 13px;
+}
+
+.tweet-text {
+	min-height: 28px;
+}
+
+.tweet-star {
+	display: flex;
+	justify-content: flex-end;
+}

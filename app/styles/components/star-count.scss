@@ -1,0 +1,13 @@
+@import '../share/_variables';
+
+.star-count {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.star-count-number {
+	margin-left: 2px;
+	font-weight: bold;
+	font-size: 15px;
+}

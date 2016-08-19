@@ -1,0 +1,30 @@
+@import '../share/_variables';
+
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 32px;
+	padding: 0 25px;
+	border: none;
+	border-radius: 2px;
+	background: $color-primary;
+	color: $text-color-invert;
+	font-weight: bold;
+	font-size: 15px;
+	font-family: $font-family;
+	cursor: pointer;
+
+	&.large {
+		height: 40px;
+	}
+
+	&:focus {
+		outline: 0;
+	}
+
+	&:active {
+		outline: 0;
+		background: darken($color-primary, 5%);
+	}
+}

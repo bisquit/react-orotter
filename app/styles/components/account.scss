@@ -1,0 +1,39 @@
+@import '../share/_variables';
+
+.account {
+	background: $white;
+	border-radius: 4px;
+}
+
+.account-profile {
+	display: flex;
+	align-items: center;
+	padding: 20px;
+	border-bottom: $border;
+}
+
+.account-profile-image {
+	margin-right: 15px;
+}
+
+.account-profile-name {
+	margin-bottom: 8px;
+	font-size: 20px;
+}
+
+.account-stat {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px;
+}
+
+.account-stat-label {
+	color: $text-color-gray;
+}
+
+.account-stat-value {
+	color: $color-primary;
+	font-size: 24px;
+	font-weight: bold;
+}
