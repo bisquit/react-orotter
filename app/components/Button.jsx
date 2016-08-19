@@ -1,12 +1,12 @@
 import React from 'react';
 
-function Button({ children, size }) {
+function Button({ children, size, ...others }) {
 	let classes = [
 		'button',
 		size
 	].join(' ');
 	return (
-		<button className={classes}>{children}</button>
+		<button {...others} className={classes}>{children}</button>
 	);
 }
 

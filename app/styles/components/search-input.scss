@@ -1,0 +1,20 @@
+@import '../share/_variables';
+
+.search-input {
+	height: 40px;
+	line-height: 40px;
+	border: none;
+	background: lighten($color-primary, 35%);
+	border-radius: 20px;
+	padding: 20px;
+	color: $color-primary;
+	font-size: 15px;
+
+	&:focus {
+		outline: 0;
+	}
+
+	&::placeholder {
+		color: $color-primary;
+	}
+}

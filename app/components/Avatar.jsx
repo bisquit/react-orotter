@@ -1,8 +1,12 @@
 import React from 'react';
 
 function Avatar({ image, width }) {
+	const styles = {
+		width: `${width}px`,
+		height: `${width}px`
+	}
 	return (
-		<div className="avatar" style={{ width: width, height: width }}>
+		<div className="avatar" style={styles}>
 			<img className="avatar-image" src={image} alt=""/>
 		</div>
 	);

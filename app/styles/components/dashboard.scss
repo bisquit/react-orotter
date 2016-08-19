@@ -1,0 +1,20 @@
+@import '../share/_variables';
+
+.dashboard {
+	padding: 100px 0;
+}
+
+.dashboard-inner {
+	width: 980px;
+	margin: 0 auto;
+	display: flex;
+}
+
+.dashboard-right {
+	flex: 1 1 0;
+	margin-left: 30px;
+}
+
+.dashboard-card {
+	margin-bottom: 20px;
+}

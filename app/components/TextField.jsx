@@ -1,8 +1,8 @@
 import React from 'react';
 
-function TextField({ placeholder }) {
+function TextField({ placeholder, ...others }) {
 	return (
-		<textarea className="textfield" placeholder={placeholder}></textarea>
+		<textarea {...others} className="textfield" placeholder={placeholder}></textarea>
 	);
 }
 

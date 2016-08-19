@@ -8,40 +8,44 @@ export default class Remark extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      avatarImage: null
-    };
+      textValue: ''
+    }
+    this.handleTextChange = this.handleTextChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
-  componentDidMount() {
-    const mockUser = {
-      "id": 1,
-      "username": "balmychan",
-      "name": "Ayumi Goto",
-      "image": "https://pbs.twimg.com/profile_images/1286698114/KM56TsK9",
-      "created_at": "2015-08-05T06:50:24.000Z",
-      "updated_at": "2015-08-05T06:50:24.000Z",
-      "follows_count": 20,
-      "followers_count": 20,
-      "tweets_count": 1200
-    };
+
+  handleTextChange(event) {
     this.setState({
-      avatarImage: mockUser.image
+      textValue: event.target.value
     })
   }
+
+  handleSubmit(event) {
+    event.preventDefault()
+    this.props.onRemark && this.props.onRemark(this.state.textValue);
+    this.setState({
+      textValue: ''
+    })
+  }
+
   render() {
+    const avatar = this.props.user
+      ? <Avatar image={this.props.user.image} width="50" />
+      : null;
     return (
       <div className="remark">
         <div className="remark-avatar">
-          <Avatar image={this.state.avatarImage} width="50" />
+          {avatar}
         </div>
-        <div className="remark-body">
-           <TextField placeholder="いま何してる？" />
+        <form className="remark-body" onSubmit={this.handleSubmit}>
+           <TextField placeholder="いま何してる？" value={this.state.textValue} onChange={this.handleTextChange} />
           <div className="remark-nav">
             <div className="remark-char-count">
-              0/140
+              {this.state.textValue.length}/140
             </div>
             <Button>送信</Button>
           </div>
-        </div>
+        </form>
       </div>
     )
   }

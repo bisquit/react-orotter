@@ -1,18 +1,7 @@
 import React from 'react';
 
 import Divider from './Divider.jsx';
-
-const mockUser = {
-  "id": 1,
-  "username": "balmychan",
-  "name": "Ayumi Goto",
-  "image": "https://pbs.twimg.com/profile_images/1286698114/KM56TsK9",
-  "created_at": "2015-08-05T06:50:24.000Z",
-  "updated_at": "2015-08-05T06:50:24.000Z",
-  "follows_count": 20,
-  "followers_count": 20,
-  "tweets_count": 1200
-};
+import Avatar from './Avatar';
 
 function Stat({ label, value }) {
   return (
@@ -36,23 +25,40 @@ function Stats({ tweetsCount, followsCount, followersCount }) {
 }
 
 export default class Account extends React.Component {
+  static contextTypes = {
+    user: React.PropTypes.object
+  }
+
   render() {
+    const avatar = this.context.user
+      ? <Avatar image={this.context.user.image} />
+      : null;
+    const stats = this.context.user
+      ? (
+        <Stats
+          tweetsCount={this.context.user.tweets_count}
+          followsCount={this.context.user.followers_count}
+          followersCount={this.context.user.followers_count}
+        />
+      )
+      : null;
+
     return (
       <div className="account">
         <div className="account-profile">
           <div className="account-profile-image">
-            <img src={mockUser.image} />
+            {avatar}
           </div>
           <div>
-            <div className="account-profile-name">{mockUser.name}</div>
-            <div className="account-profile-username">@{mockUser.username}</div>
+            <div className="account-profile-name">
+              {this.context.user ? this.context.user.name : ''}
+            </div>
+            <div className="account-profile-username">
+              {this.context.user ? '@' + this.context.user.username : ''}
+            </div>
           </div>
         </div>
-        <Stats
-          tweetsCount={mockUser.tweets_count}
-          followsCount={mockUser.followers_count}
-          followersCount={mockUser.followers_count}
-        />
+        {stats}
       </div>
     )
   }
